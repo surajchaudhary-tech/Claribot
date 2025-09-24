@@ -272,7 +272,7 @@ const AuthPage = () => {
     formData.append('language', language);
 
     try {
-      const response = await fetch('http://localhost:3000/analyze-pdf', {
+      const response = await fetch('https://claribot.onrender.com/analyze-pdf', {
         method: 'POST',
         body: formData,
       });
@@ -326,39 +326,53 @@ const AuthPage = () => {
   // Show PDF Analyzer if authenticated
   if (showAnalyzerPage) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
+      <div 
+  className="min-h-screen"
+  style={{
+    background: "linear-gradient(135deg, #90D5FF 0%, #4F90D9 70%, #E0F7FA 100%)"
+  }}
+>
+
         <div className="container mx-auto px-4 py-8">
           {/* Header with Logout */}
           <div className="flex justify-between items-center mb-8">
-            <div className="flex justify-center items-center gap-3">
-              <div className="p-3 bg-black rounded-xl text-white shadow-lg">
-                <FileText size={32} />
-              </div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent">
-                Claribot Financial PDF Analyzer
-              </h1>
-            </div>
+            <div className="flex items-center gap-3">
+  <div className="p-3  rounded-xl shadow-lg flex items-center">
+    <img 
+    src='https://www.ritiriwaz.com/wp-content/uploads/2017/01/Indian-Emblem.jpg'
+    style ={{width:82, height:82, borderRadius:8}}
+      
+    />
+  
+  </div>
+  <h1 className="text-3xl md:text-3xl font-bold font- text-blue-800" style={{letterSpacing:"1px"}}>
+    Financial Document Analyzer ~Claribot
+  </h1>
+</div>
+
             <div className="flex items-center gap-4">
-              <span className="text-gray-600">Welcome, {formData.name}!</span>
-              <button
-                onClick={() => setShowAnalyzerPage(false)}
-                className="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-              >
-                Sign Out
-              </button>
-            </div>
+              <span className="text-gray-600 font-semibold ">Welcome, {formData.name}!</span>
+<button
+  onClick={() => setShowAnalyzerPage(false)}
+  className="bg-blue-700 text-white hover:bg-blue-900 px-4 py-2 rounded-lg transition"
+>
+  Sign Out
+</button>
+</div>
+
           </div>
 
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto text-center mb-10">
+          <p className="text-grey-700 text-lg max-w-2xl mx-auto text-center mb-10">
             Upload your financial documents and get AI-powered comprehensive risk assessment with detailed analysis in your preferred language
           </p>
 
           {/* Upload Section */}
-          <div className="max-w-2xl mx-auto mb-8">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 border-2 border-gray-200 backdrop-blur-sm">
+         <div className="max-w-2xl mx-auto mb-8">
+  <div className="bg-white border-2 border-blue-100 rounded-2xl shadow-xl p-8">
+
               {/* Language Selection */}
               <div className="mb-6">
-                <label className="text-sm font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                <label className="text-2xl font-semibold text-gray-800 mb-3 flex items-center gap-2">
                   <Globe size={16} />
                   Select Analysis Language
                 </label>
@@ -406,7 +420,7 @@ const AuthPage = () => {
 
               {/* File Upload Area */}
               <div className="mb-6">
-                <label className="block text-sm font-semibold text-gray-800 mb-3">
+                <label className="block text-2xl font-semibold text-gray-800 mb-3">
                   Upload Financial PDF Document
                 </label>
                 <div
@@ -475,7 +489,7 @@ const AuthPage = () => {
                   </>
                 ) : (
                   <>
-                    <TrendingUp size={20} />
+                    <TrendingUp size={20} /> 
                     Get Comprehensive Financial Analysis
                   </>
                 )}
@@ -486,62 +500,62 @@ const AuthPage = () => {
           {/* Analysis Results */}
           {analysis && (
             <div className="max-w-6xl mx-auto animate-fade-in">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Comprehensive Financial Analysis</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Comprehensive Financial Analysis</h2>
               
               {/* Metrics Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 {/* Risk Level Card */}
-                <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:border-gray-300">
+                <div className="bg-blue-100 rounded-2xl shadow-x2 p-6 border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:border-gray-300">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-3 bg-gray-200 rounded-xl shadow-inner">
                       <AlertTriangle className="text-gray-800" size={28} />
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900">Risk Assessment</h3>
+                    <h3 className="text-2xl font-semibold text-green-600">Risk Assessment</h3>
                   </div>
-                  <div className={`text-3xl font-bold mb-2 ${getRiskColor(analysis.risk)}`}>
+                  <div className={`text-4xl font-bold mb-2  text-green-500 ${getRiskColor(analysis.risk)}`}>
                     {analysis.risk}
                   </div>
-                  <p className="text-sm text-gray-600">Overall risk evaluation</p>
+                  <p className="text-2xl text-green-700">Overall risk evaluation</p>
                 </div>
 
                 {/* Risk Percentage Card */}
-                <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:border-gray-300">
+                <div className="bg-blue-100 rounded-2xl shadow-x2 p-6 border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:border-gray-300">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-3 bg-gray-200 rounded-xl shadow-inner">
                       <TrendingUp className="text-gray-800" size={28} />
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900">Risk Score</h3>
+                    <h3 className="text-2xl font-semibold text-red-500">Risk Score</h3>
                   </div>
-                  <div className={`text-3xl font-bold mb-2 ${getScoreColor(analysis.percentage)}`}>
+                  <div className={`text-3xl font-bold mb-2 text-red-600 ${getScoreColor(analysis.percentage)}`}>
                     {analysis.percentage}%
                   </div>
-                  <div className="mt-3 bg-gray-200 rounded-full h-3 shadow-inner">
+                  <div className="mt-3 bg-red-200 rounded-full h-3 shadow-inner">
                     <div 
-                      className={`h-3 rounded-full transition-all duration-1000 shadow-sm ${getProgressBarColor(analysis.percentage)}`}
+                      className={`h-3 rounded-full transition-all duration-1000 shadow-sm bg-red-500  ${getProgressBarColor(analysis.percentage)}`}
                       style={{ width: `${Math.min(100, Math.max(0, parseInt(analysis.percentage) || 0))}%` }}
                     ></div>
                   </div>
-                  <p className="text-sm text-gray-600 mt-2">Quantified risk percentage</p>
+                  <p className="text-2xl text-red-800 mt-2">Quantified risk percentage</p>
                 </div>
 
                 {/* Diversification Score Card */}
-                <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:border-gray-300">
+                <div className="bg-blue-100 rounded-2xl shadow-x2 p-6 border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:border-gray-300">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-3 bg-gray-200 rounded-xl shadow-inner">
                       <PieChart className="text-gray-800" size={28} />
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900">Portfolio Health</h3>
+                    <h3 className="text-2xl font-semibold text-blue-700">Portfolio Health</h3>
                   </div>
-                  <div className={`text-3xl font-bold mb-2 ${getScoreColor(analysis.diversification_score)}`}>
+                  <div className={`text-3xl font-bold mb-2 text-blue-500${getScoreColor(analysis.diversification_score)}`}>
                     {analysis.diversification_score}/100
                   </div>
-                  <div className="mt-3 bg-gray-200 rounded-full h-3 shadow-inner">
+                  <div className="mt-3 bg-blue-200 rounded-full h-3 shadow-inner">
                     <div 
                       className={`h-3 rounded-full transition-all duration-1000 shadow-sm ${getProgressBarColor(analysis.diversification_score)}`}
                       style={{ width: `${Math.min(100, Math.max(0, parseInt(analysis.diversification_score) || 0))}%` }}
                     ></div>
                   </div>
-                  <p className="text-sm text-gray-600 mt-2">Diversification strength</p>
+                  <p className="text-2xl text-blue-900 mt-2 ">Diversification strength</p>
                 </div>
               </div>
 
@@ -859,10 +873,11 @@ const AuthPage = () => {
                   className="text-sm text-blue-600 hover:text-blue-500 font-medium focus:outline-none focus:underline transition duration-150 ease-in-out"
                 >
                   Forgot your password?
-                </a>
+                </a>  
               </div>
             )}
           </div>
+          
         </div>
       </div>
     </div>
