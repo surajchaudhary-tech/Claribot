@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@google-cloud/text-to-speech": "^6.3.0",
+    "@splinetool/react-spline": "^4.1.0",
     "@tailwindcss/postcss": "^4.1.13",
     "axios": "^1.12.1",
     "lucide-react": "^0.544.0",
     "pdfreader": "^3.0.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^6.30.1",
     "react-text-to-speech": "^2.1.2"
   },
   "devDependencies": {
