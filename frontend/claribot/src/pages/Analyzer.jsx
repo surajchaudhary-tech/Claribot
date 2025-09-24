@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import { Upload, FileText, AlertTriangle, TrendingUp, CheckCircle, Loader, ChevronDown, Globe, Volume2, Play, Pause, Square, Shield, BarChart3, Award, Zap } from 'lucide-react';
 import WordOverlay from '../components/common/WordOverlay.jsx';
+import ComplianceChecker from '../components/Compliance/ComplianceChecker.jsx';
 
 const Analyzer = () => {
   const { user, logout } = useAuth();
@@ -15,6 +16,7 @@ const Analyzer = () => {
   const [error, setError] = useState('');
   const [dragActive, setDragActive] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [complianceResults, setComplianceResults] = useState(null);
 
   const [speechSynthesisInstance] = useState(window.speechSynthesis);
   const [currentUtterance, setCurrentUtterance] = useState(null);
@@ -109,8 +111,13 @@ const Analyzer = () => {
     try {
       const response = await fetch('https://claribot.onrender.com/analyze-pdf', { method: 'POST', body: formDataObj });
       const data = await response.json();
-      if (data.success) setAnalysis(data.analysis);
-      else setError(data.error || 'Analysis failed');
+      if (data.success) {
+        setAnalysis(data.analysis);
+        // Trigger compliance check after successful analysis
+        setComplianceResults(null);
+      } else {
+        setError(data.error || 'Analysis failed');
+      }
     } catch (err) {
       setError('Connection error. Please make sure the server is running.');
     } finally {
@@ -242,6 +249,11 @@ const Analyzer = () => {
 
         {analysis && (
           <div className="max-w-7xl mx-auto space-y-8">
+            {/* Compliance Checker */}
+            <ComplianceChecker 
+              analysisData={analysis} 
+              onComplianceResults={setComplianceResults}
+            />
             <div className="text-center">
               <div className="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full mb-4"><Award className="w-5 h-5 text-blue-600" /><span className="text-blue-700 font-semibold">Analysis Complete</span></div>
               <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-2">Financial Analysis Report</h2>

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Shield, Bot, FileText, ArrowRight } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.jsx';
 import WordOverlay from '../components/common/WordOverlay.jsx';
+import Chatbot from '../components/Chatbot/Chatbot.jsx';
+import RBIActionPanel from '../components/RBIActions/RBIActionPanel.jsx';
 
 const Home = () => {
   const { user } = useAuth();
@@ -68,6 +70,8 @@ const Home = () => {
           </div>
         </section>
       </div>
+      <Chatbot />
+      <RBIActionPanel />
     </div>
   );
 };
