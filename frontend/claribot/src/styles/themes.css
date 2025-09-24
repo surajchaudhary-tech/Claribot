@@ -1,0 +1,317 @@
+/* Advanced Theme System for Claribot */
+
+/* Base Theme Variables */
+:root {
+  --font-size-base: 16px;
+  --font-family-base: 'Inter', sans-serif;
+  --transition-base: all 0.3s ease;
+}
+
+/* Light Theme (Default) */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #8b5cf6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-primary: #334155;
+  --border-secondary: #475569;
+  --accent-primary: #60a5fa;
+  --accent-secondary: #a78bfa;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --error: #f87171;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+}
+
+/* Warm Dark Theme */
+[data-theme="warm-dark"] {
+  --bg-primary: #1c1917;
+  --bg-secondary: #292524;
+  --bg-tertiary: #44403c;
+  --text-primary: #fef3c7;
+  --text-secondary: #fde68a;
+  --text-muted: #d97706;
+  --border-primary: #44403c;
+  --border-secondary: #57534e;
+  --accent-primary: #f59e0b;
+  --accent-secondary: #d97706;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+}
+
+/* Cool Dark Theme */
+[data-theme="cool-dark"] {
+  --bg-primary: #0c4a6e;
+  --bg-secondary: #075985;
+  --bg-tertiary: #0369a1;
+  --text-primary: #e0f2fe;
+  --text-secondary: #bae6fd;
+  --text-muted: #7dd3fc;
+  --border-primary: #0369a1;
+  --border-secondary: #0284c7;
+  --accent-primary: #0ea5e9;
+  --accent-secondary: #38bdf8;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+  --bg-primary: #000000;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #333333;
+  --text-primary: #ffffff;
+  --text-secondary: #ffffff;
+  --text-muted: #cccccc;
+  --border-primary: #ffffff;
+  --border-secondary: #ffffff;
+  --accent-primary: #00ff00;
+  --accent-secondary: #ffff00;
+  --success: #00ff00;
+  --warning: #ffff00;
+  --error: #ff0000;
+  --shadow: 0 0 0 2px #ffffff;
+}
+
+/* Sepia Theme */
+[data-theme="sepia"] {
+  --bg-primary: #f7f3e9;
+  --bg-secondary: #f4f1e8;
+  --bg-tertiary: #ede7d9;
+  --text-primary: #5c4b37;
+  --text-secondary: #8b7355;
+  --text-muted: #a68b5b;
+  --border-primary: #d4c4a8;
+  --border-secondary: #c4b896;
+  --accent-primary: #8b4513;
+  --accent-secondary: #a0522d;
+  --success: #228b22;
+  --warning: #daa520;
+  --error: #8b0000;
+  --shadow: 0 1px 3px 0 rgb(139 69 19 / 0.1), 0 1px 2px -1px rgb(139 69 19 / 0.1);
+}
+
+/* Font Family Variants */
+[data-font-family="inter"] {
+  --font-family-base: 'Inter', sans-serif;
+}
+
+[data-font-family="roboto"] {
+  --font-family-base: 'Roboto', sans-serif;
+}
+
+[data-font-family="open-sans"] {
+  --font-family-base: 'Open Sans', sans-serif;
+}
+
+[data-font-family="source-sans"] {
+  --font-family-base: 'Source Sans Pro', sans-serif;
+}
+
+[data-font-family="noto-sans"] {
+  --font-family-base: 'Noto Sans', sans-serif;
+}
+
+[data-font-family="dyslexia-friendly"] {
+  --font-family-base: 'OpenDyslexic', sans-serif;
+}
+
+[data-font-family="hindi"] {
+  --font-family-base: 'Noto Sans Devanagari', sans-serif;
+}
+
+[data-font-family="tamil"] {
+  --font-family-base: 'Noto Sans Tamil', sans-serif;
+}
+
+/* Color Blind Accessibility */
+[data-color-blind="protanopia"] {
+  --accent-primary: #0066cc;
+  --accent-secondary: #cc6600;
+  --success: #00cc66;
+  --warning: #cccc00;
+  --error: #cc0066;
+}
+
+[data-color-blind="deuteranopia"] {
+  --accent-primary: #0066cc;
+  --accent-secondary: #cc6600;
+  --success: #00cc66;
+  --warning: #cccc00;
+  --error: #cc0066;
+}
+
+[data-color-blind="tritanopia"] {
+  --accent-primary: #cc6600;
+  --accent-secondary: #0066cc;
+  --success: #00cc66;
+  --warning: #cc0066;
+  --error: #cccc00;
+}
+
+[data-color-blind="achromatopsia"] {
+  --accent-primary: #666666;
+  --accent-secondary: #999999;
+  --success: #333333;
+  --warning: #888888;
+  --error: #000000;
+}
+
+/* High Contrast Mode */
+[data-high-contrast="true"] {
+  --bg-primary: #000000;
+  --bg-secondary: #000000;
+  --bg-tertiary: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #ffffff;
+  --text-muted: #ffffff;
+  --border-primary: #ffffff;
+  --border-secondary: #ffffff;
+  --accent-primary: #ffff00;
+  --accent-secondary: #00ffff;
+  --success: #00ff00;
+  --warning: #ffff00;
+  --error: #ff0000;
+  --shadow: 0 0 0 3px #ffffff;
+}
+
+/* Reduced Motion */
+[data-reduced-motion="true"] * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Apply Theme Variables */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  transition: var(--transition-base);
+}
+
+/* Component Styling */
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.border-primary {
+  border-color: var(--border-primary);
+}
+
+.border-secondary {
+  border-color: var(--border-secondary);
+}
+
+.text-accent {
+  color: var(--accent-primary);
+}
+
+.bg-accent {
+  background-color: var(--accent-primary);
+}
+
+.border-accent {
+  border-color: var(--accent-primary);
+}
+
+/* Custom Slider Styling */
+.slider {
+  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  cursor: pointer;
+  border: 2px solid var(--bg-primary);
+  box-shadow: var(--shadow);
+}
+
+.slider::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  cursor: pointer;
+  border: 2px solid var(--bg-primary);
+  box-shadow: var(--shadow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-base: 12px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f5f5f5;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --text-muted: #666666;
+    --border-primary: #000000;
+    --border-secondary: #333333;
+    --accent-primary: #000000;
+    --accent-secondary: #333333;
+  }
+}

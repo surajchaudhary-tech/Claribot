@@ -82,7 +82,7 @@ const RBIActionPanel = () => {
   const categories = [...new Set(rbiActions.map(action => action.category))];
 
   return (
-    <div className="fixed top-6 right-6 z-50">
+    <div className="fixed left-6 top-58 z-50">
       {/* Action Panel */}
       {isOpen && (
         <div className="mb-4 w-96 max-h-[80vh] bg-white rounded-2xl shadow-2xl border border-blue-200 overflow-hidden">
@@ -195,14 +195,21 @@ const RBIActionPanel = () => {
       {/* Floating Action Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+        className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 px-4 py-3 group"
+        title="RBI Actions & Government Links"
       >
         {isOpen ? (
-          <X className="w-6 h-6" />
+          <X className="w-5 h-5" />
         ) : (
-          <div className="relative">
-            <Shield className="w-6 h-6" />
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <Shield className="w-5 h-5" />
+              <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            </div>
+            <div className="text-left">
+              <div className="font-semibold text-sm">RBI Actions</div>
+              <div className="text-xs opacity-80">Government Links</div>
+            </div>
           </div>
         )}
       </button>

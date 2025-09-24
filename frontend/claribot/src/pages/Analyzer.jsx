@@ -253,6 +253,7 @@ const Analyzer = () => {
             <ComplianceChecker 
               analysisData={analysis} 
               onComplianceResults={setComplianceResults}
+              selectedLanguage={language}
             />
             <div className="text-center">
               <div className="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full mb-4"><Award className="w-5 h-5 text-blue-600" /><span className="text-blue-700 font-semibold">Analysis Complete</span></div>
