@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import AuthHeader from '../components/Auth/AuthHeader.jsx';
-import AuthForm from '../components/Auth/AuthForm.jsx';
-import AuthFeatures from '../components/Auth/AuthFeatures.jsx';
+import AuthHeader from '../components/auth/AuthHeader.jsx';
+import AuthForm from '../components/auth/AuthForm.jsx';
+import AuthFeatures from '../components/auth/AuthFeatures.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 import WordOverlay from '../components/common/WordOverlay.jsx';
 
